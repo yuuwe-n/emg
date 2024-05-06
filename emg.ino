@@ -35,7 +35,7 @@ void setup() {
   }
 
   Serial.println("MAX VALUE: ");
-  Serial.print(max_value);
+  Serial.println(max_value);
   delay(3000);
 
   for(int i = 0; i<10;i++){Serial.println();}

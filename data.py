@@ -1,5 +1,14 @@
 import matplotlib.pyplot as plt
 import serial
+import csv
+import datetime as dt
+
+date = (dt.datetime.now().strftime("%Y%m%d%H%M%S"))
+
+file = "data/" + date + ".csv"
+print(file)
+
+
 
 # if macos use '/dev/cu.usbmodem2101'
 # ls /dev/tty* | grep usb
@@ -12,6 +21,10 @@ ser.baudrate = 9600
 if not ser.isOpen():
     ser.open()
 
-while True:
-    res = ser.readline()
-    print(res.decode('utf-8'))
+with open(file, 'w', newline='') as f:
+	w = csv.writer(f)
+	while True:
+		res = ser.readline()
+		w.writerow([res.decode('utf-8')])
+		print(res.decode('utf-8'))
+		
