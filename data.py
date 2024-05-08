@@ -2,18 +2,23 @@ import matplotlib.pyplot as plt
 import serial
 import csv
 import datetime as dt
+import platform
 
 date = (dt.datetime.now().strftime("%Y%m%d%H%M%S"))
 
 file = "data/" + date + ".csv"
 print(file)
 
-
+pf = platform.system()
+match pf:
+	case "Windows":
+		ser = serial.Serial('COM3')
+	case "Darwin":
+		ser = serial.Serial('/dev/cu.usbmodem2101')
 
 # if macos use '/dev/cu.usbmodem2101'
 # ls /dev/tty* | grep usb
-
-ser = serial.Serial('/dev/cu.usbmodem2101') # macos
+#ser = serial.Serial('/dev/cu.usbmodem2101') # macos
 #ser = serial.Serial('COM3') # windows
 
 ser.baudrate = 9600
