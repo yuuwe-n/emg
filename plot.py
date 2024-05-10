@@ -1,17 +1,33 @@
+#!/usr/bin/env python3
+
 import matplotlib as mpl
 import matplotlib.pyplot as plt
 import numpy as np
 import csv
+import platform
 
-import os
 
 data = []
 
-with open("data\\20240505202222.csv", newline='') as f:
+
+#file = "data\\20240505202222.csv" # windows
+#file = "data/20240505202222.csv" # unix
+
+pf = platform.system()
+
+match pf:
+	case "Windows":
+		file = "data\\20240505202222.csv" # windows
+	case "Darwin":
+		file = "data/20240505202222.csv" # unix
+
+file = "data/20240505201335.csv"
+
+with open(file, newline='') as f:
     r = csv.reader(f)
     for row in r:
         entry = row[0].strip()
-        if entry:
+        if entry and (entry):
             entry = int(entry)
             data.append(entry)
 
