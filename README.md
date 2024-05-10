@@ -1,14 +1,7 @@
 # emg
 
-
 # dependencies
+## python
 
-avr
-
-avr-gcc
-avrdude
-
-python
-
-matplotlib
-pyserial
+- matplotlib
+- pyserial
