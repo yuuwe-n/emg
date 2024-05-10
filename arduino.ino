@@ -35,10 +35,11 @@ void setup() {
   }
 
   Serial.println("MAX VALUE: ");
-  Serial.println(max_value);
+  Serial.println(max_value); // convert max_value to string and append
+  for(int i = 0; i<10;i++){Serial.println();}
+  Serial.println("CALIBRATION FINISHED")
   delay(3000);
 
-  for(int i = 0; i<10;i++){Serial.println();}
 }
 
 void loop() {
