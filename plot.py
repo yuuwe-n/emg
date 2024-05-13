@@ -27,7 +27,7 @@ with open(file, newline='') as f:
     r = csv.reader(f)
     for row in r:
         entry = row[0].strip()
-        if entry and (entry < 100):
+        if entry:
             entry = int(entry)
             data.append(entry)
 
