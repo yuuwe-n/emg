@@ -2,18 +2,11 @@ int emg_pin = A0;
 int value = 0;
 int max_value = 0;
 
-int c_pin = 2; // calibration pin
-int r_pin = A5; // running pin
-
-
-
 // TODO
 // 1. Calibration
-// 2. cvs file
 
 void setup() {
   Serial.begin(9600);
-  pinMode(c_pin, OUTPUT);
 
   // calibration
   Serial.println("HAVE YOUR ARM RELAXED");
