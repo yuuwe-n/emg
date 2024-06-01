@@ -41,7 +41,7 @@ void setup() {
   Serial.println("THRESHOLD: ");
   Serial.println(threshold); // convert threshold to string and append
   for(int i = 0; i<10;i++){Serial.println();}
-  Serial.println("CALIBRATION FINISHED");
+  Serial.println("CALIBRATION FINISHED")
   delay(3000);
 
 
