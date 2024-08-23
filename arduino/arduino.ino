@@ -86,7 +86,7 @@ void loop() {
   angle = static_cast<int>(norm_value * MAX_ANGLE);
   servo.write(angle);
 
-  // Serial.println(value);
+  Serial.println(value);
 
   delay(period); // refresh period
 }
