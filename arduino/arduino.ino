@@ -1,6 +1,6 @@
 #include <Servo.h>
 
-Servo servo;
+//Servo servo;
 const int MAX_ANGLE = 180;
 
 int emg_pin = A0;
@@ -18,8 +18,8 @@ void setup() {
   Serial.begin(9600);
 
   // servo intialization
-  servo.attach(13); // attach(<pin number>)
-  servo.write(0);
+//  servo.attach(13); // attach(<pin number>)
+//  servo.write(0);
 
   // calibration
   Serial.println("HAVE YOUR ARM RELAXED");
@@ -84,7 +84,7 @@ void loop() {
   
   Serial.println(norm_value);
   angle = static_cast<int>(norm_value * MAX_ANGLE);
-  servo.write(angle);
+//  servo.write(angle);
 
   Serial.println(value);
 
